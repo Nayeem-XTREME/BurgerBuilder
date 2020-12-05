@@ -9,14 +9,10 @@ export default function Burger({ingredients}) {
                 return <BurgerIngredients key={x+y} type={x}/>
             })
         });
-    
-    // console.log(trasformedIngredients);
 
     const checkIng = trasformedIngredients.reduce((prev, curr) => {
         return prev.concat(curr)
     }, [])
-
-    // console.log(checkIng);
 
     if (checkIng.length === 0) {
         trasformedIngredients = <p>Please add some ingredients!</p>
