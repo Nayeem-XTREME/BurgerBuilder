@@ -17,6 +17,8 @@ export default function OrderSummery({ingredients}) {
                 {ingredientSummery}
             </ul>
             <p>Continue to checkout?</p>
+            <button>CANCEL</button>
+            <button>CONTINUE</button> 
         </div>
     )
 }
