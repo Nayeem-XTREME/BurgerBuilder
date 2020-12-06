@@ -10,7 +10,7 @@ const controls = [
     { label: 'Meat', type: 'meat' },
 ]
 
-export default function BuildControls({ingredientAdded, ingredientRemoved, disabled, price}) {
+export default function BuildControls({ingredientAdded, ingredientRemoved, disabled, price, purchaseable}) {
     return (
         <div className={styles.BuildControls}>
             <p>Current Price: <strong>{price.toFixed(2)}</strong></p>
@@ -23,6 +23,7 @@ export default function BuildControls({ingredientAdded, ingredientRemoved, disab
                     disabled={disabled[x.type]}
                 />
             )}
+            <button className={styles.OrderButton} disabled={!purchaseable}>ORDER NOW</button>
         </div>
     )
 }
