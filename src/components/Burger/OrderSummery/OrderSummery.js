@@ -1,6 +1,7 @@
 import React from 'react'
+import Button from '../../UI/Button/Button'
 
-export default function OrderSummery({ingredients}) {
+export default function OrderSummery({ingredients, purchaseCancelled, purchaseContinued}) {
     const ingredientSummery = Object.keys(ingredients).map(i => {
         return (
             <li key={i}> 
@@ -17,8 +18,8 @@ export default function OrderSummery({ingredients}) {
                 {ingredientSummery}
             </ul>
             <p>Continue to checkout?</p>
-            <button>CANCEL</button>
-            <button>CONTINUE</button> 
+            <Button btnType="Danger" clicked={purchaseCancelled}>CANCEL</Button>
+            <Button btnType="Success" clicked={purchaseContinued}>CONTINUE</Button> 
         </div>
     )
 }

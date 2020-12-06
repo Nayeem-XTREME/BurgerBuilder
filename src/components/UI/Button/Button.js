@@ -5,8 +5,9 @@ export default function Button(props) {
     return (
         <button 
             onClick={props.clicked}
-            className={[styles.Button, styles[props.btnType]].join(' ')}>
-                {props.children}
+            className={[styles.Button, styles[props.btnType]].join(' ')}
+        >
+            {props.children}
         </button>
     )
 }
