@@ -10,7 +10,7 @@ const controls = [
     { label: 'Meat', type: 'meat' },
 ]
 
-export default function BuildControls({ingredientAdded}) {
+export default function BuildControls({ingredientAdded, ingredientRemoved, disabled}) {
     return (
         <div className={styles.BuildControls}>
             {controls.map(x => 
@@ -18,6 +18,8 @@ export default function BuildControls({ingredientAdded}) {
                     key={x.label} 
                     label={x.label} 
                     added={() => ingredientAdded(x.type)} 
+                    removed={() => ingredientRemoved(x.type)}
+                    disabled={disabled[x.type]}
                 />
             )}
         </div>
