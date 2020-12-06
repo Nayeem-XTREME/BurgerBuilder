@@ -10,9 +10,10 @@ const controls = [
     { label: 'Meat', type: 'meat' },
 ]
 
-export default function BuildControls({ingredientAdded, ingredientRemoved, disabled}) {
+export default function BuildControls({ingredientAdded, ingredientRemoved, disabled, price}) {
     return (
         <div className={styles.BuildControls}>
+            <p>Current Price: <strong>{price.toFixed(2)}</strong></p>
             {controls.map(x => 
                 <BuildControl 
                     key={x.label} 
